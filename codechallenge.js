@@ -22,7 +22,7 @@ reverseWords('This is another sentence');
 const oddishEvenish = (number) => {
   const check = number.toString().split('');
   const checked = check.reduce((acc, curr) => acc + Number(curr), 0);
-  const isEven = checked % 2 === 0 ? 'Evenish' : 'Oddish';
+  const isEven = checked % 2 ? 'Oddish' : 'Evenish';
   console.log(isEven);
   return isEven;
 };
@@ -43,3 +43,22 @@ const at = (arr, index) => {
 
 at(['1', 2, 'four', 9, 'eleven'], 3);
 at(['1', 2, 'four', 9, 'eleven'], -3);
+
+const fizzbuzz = (num) => {
+  const newArray = [];
+  for (let i = 1; i < num; i++) {
+    if (i % 15 === 0) {
+      newArray.push('fizzbuzz');
+    } else if (i % 5 === 0) {
+      newArray.push('buzz');
+    } else if (i % 3 === 0) {
+      newArray.push('fizz');
+    } else {
+      newArray.push(i);
+    }
+  }
+  console.log(newArray);
+  return newArray;
+};
+
+fizzbuzz(22);
